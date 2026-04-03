@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6550783064044463" crossorigin="anonymous"></script>
@@ -51,6 +52,7 @@
 </nav>
 
 <!-- HERO -->
+
 <section class="hero">
   <div class="hero-inner">
     <div>
@@ -68,133 +70,137 @@
       </div>
     </div>
 
-    <!-- Quick checker -->
-    <div class="checker-card" id="checker-section">
-      <div class="checker-header">
-        <div class="checker-label">Free Case Assessment</div>
-        <h3>Do You Have a Lemon Law Case?</h3>
-        <p class="checker-sub">Answer 4 quick questions — get an instant assessment.</p>
-      </div>
-      <div class="check-fields">
-        <div class="field-group">
-          <label class="field-label" for="c-state">Your State</label>
-          <div class="select-wrap">
-            <select id="c-state">
-              <option value="">Select your state…</option>
-              <option value="AL">Alabama</option>
-              <option value="AK">Alaska</option>
-              <option value="AZ">Arizona</option>
-              <option value="AR">Arkansas</option>
-              <option value="CA">California</option>
-              <option value="CO">Colorado</option>
-              <option value="CT">Connecticut</option>
-              <option value="DE">Delaware</option>
-              <option value="FL">Florida</option>
-              <option value="GA">Georgia</option>
-              <option value="HI">Hawaii</option>
-              <option value="ID">Idaho</option>
-              <option value="IL">Illinois</option>
-              <option value="IN">Indiana</option>
-              <option value="IA">Iowa</option>
-              <option value="KS">Kansas</option>
-              <option value="KY">Kentucky</option>
-              <option value="LA">Louisiana</option>
-              <option value="ME">Maine</option>
-              <option value="MD">Maryland</option>
-              <option value="MA">Massachusetts</option>
-              <option value="MI">Michigan</option>
-              <option value="MN">Minnesota</option>
-              <option value="MS">Mississippi</option>
-              <option value="MO">Missouri</option>
-              <option value="MT">Montana</option>
-              <option value="NE">Nebraska</option>
-              <option value="NV">Nevada</option>
-              <option value="NH">New Hampshire</option>
-              <option value="NJ">New Jersey</option>
-              <option value="NM">New Mexico</option>
-              <option value="NY">New York</option>
-              <option value="NC">North Carolina</option>
-              <option value="ND">North Dakota</option>
-              <option value="OH">Ohio</option>
-              <option value="OK">Oklahoma</option>
-              <option value="OR">Oregon</option>
-              <option value="PA">Pennsylvania</option>
-              <option value="RI">Rhode Island</option>
-              <option value="SC">South Carolina</option>
-              <option value="SD">South Dakota</option>
-              <option value="TN">Tennessee</option>
-              <option value="TX">Texas</option>
-              <option value="UT">Utah</option>
-              <option value="VT">Vermont</option>
-              <option value="VA">Virginia</option>
-              <option value="WA">Washington</option>
-              <option value="WV">West Virginia</option>
-              <option value="WI">Wisconsin</option>
-              <option value="WY">Wyoming</option>
-            </select>
-            <span class="select-arrow">▾</span>
-          </div>
-        </div>
-        <div class="field-group">
-          <label class="field-label" for="c-repairs">Repair Attempts</label>
-          <div class="select-wrap">
-            <select id="c-repairs">
-              <option value="">How many times has it been in for repairs?</option>
-              <option value="1">1 attempt</option>
-              <option value="2">2 attempts</option>
-              <option value="3">3 attempts</option>
-              <option value="4">4 or more attempts</option>
-            </select>
-            <span class="select-arrow">▾</span>
-          </div>
-        </div>
-        <div class="field-group">
-          <label class="field-label" for="c-age">Purchase Date</label>
-          <div class="select-wrap">
-            <select id="c-age">
-              <option value="">When did you buy the car?</option>
-              <option value="under1">Less than 1 year ago</option>
-              <option value="1to2">1–2 years ago</option>
-              <option value="2to3">2–3 years ago</option>
-              <option value="over3">More than 3 years ago</option>
-            </select>
-            <span class="select-arrow">▾</span>
-          </div>
-        </div>
-        <div class="field-group">
-          <label class="field-label" for="c-warranty">Warranty Status</label>
-          <div class="select-wrap">
-            <select id="c-warranty">
-              <option value="">Is the vehicle still under warranty?</option>
-              <option value="yes">Yes, still under warranty</option>
-              <option value="expired">Warranty just expired</option>
-              <option value="no">No / not sure</option>
-            </select>
-            <span class="select-arrow">▾</span>
-          </div>
-        </div>
-      </div>
-      <button class="check-btn" onclick="checkCase()">Check My Case</button>
-
-      <!-- Structured result panel -->
-      <div class="check-result" id="check-result">
-        <div class="result-verdict">
-          <div class="verdict-badge" id="r-badge"></div>
-          <div class="verdict-text">
-            <div class="verdict-title" id="r-title"></div>
-            <div class="verdict-body" id="r-body"></div>
-          </div>
-        </div>
-        <div class="result-next-steps" id="r-next-steps">
-          <div class="next-steps-label">Your Next Steps</div>
-          <div class="next-steps-list" id="r-steps-list"></div>
-        </div>
+```
+<!-- Quick checker -->
+<div class="checker-card" id="checker-section">
+  <div class="checker-header">
+    <div class="checker-label">Free Case Assessment</div>
+    <h3>Do You Have a Lemon Law Case?</h3>
+    <p class="checker-sub">Answer 4 quick questions — get an instant assessment.</p>
+  </div>
+  <div class="check-fields">
+    <div class="field-group">
+      <label class="field-label" for="c-state">Your State</label>
+      <div class="select-wrap">
+        <select id="c-state">
+          <option value="">Select your state…</option>
+          <option value="AL">Alabama</option>
+          <option value="AK">Alaska</option>
+          <option value="AZ">Arizona</option>
+          <option value="AR">Arkansas</option>
+          <option value="CA">California</option>
+          <option value="CO">Colorado</option>
+          <option value="CT">Connecticut</option>
+          <option value="DE">Delaware</option>
+          <option value="FL">Florida</option>
+          <option value="GA">Georgia</option>
+          <option value="HI">Hawaii</option>
+          <option value="ID">Idaho</option>
+          <option value="IL">Illinois</option>
+          <option value="IN">Indiana</option>
+          <option value="IA">Iowa</option>
+          <option value="KS">Kansas</option>
+          <option value="KY">Kentucky</option>
+          <option value="LA">Louisiana</option>
+          <option value="ME">Maine</option>
+          <option value="MD">Maryland</option>
+          <option value="MA">Massachusetts</option>
+          <option value="MI">Michigan</option>
+          <option value="MN">Minnesota</option>
+          <option value="MS">Mississippi</option>
+          <option value="MO">Missouri</option>
+          <option value="MT">Montana</option>
+          <option value="NE">Nebraska</option>
+          <option value="NV">Nevada</option>
+          <option value="NH">New Hampshire</option>
+          <option value="NJ">New Jersey</option>
+          <option value="NM">New Mexico</option>
+          <option value="NY">New York</option>
+          <option value="NC">North Carolina</option>
+          <option value="ND">North Dakota</option>
+          <option value="OH">Ohio</option>
+          <option value="OK">Oklahoma</option>
+          <option value="OR">Oregon</option>
+          <option value="PA">Pennsylvania</option>
+          <option value="RI">Rhode Island</option>
+          <option value="SC">South Carolina</option>
+          <option value="SD">South Dakota</option>
+          <option value="TN">Tennessee</option>
+          <option value="TX">Texas</option>
+          <option value="UT">Utah</option>
+          <option value="VT">Vermont</option>
+          <option value="VA">Virginia</option>
+          <option value="WA">Washington</option>
+          <option value="WV">West Virginia</option>
+          <option value="WI">Wisconsin</option>
+          <option value="WY">Wyoming</option>
+        </select>
+        <span class="select-arrow">▾</span>
       </div>
     </div>
+    <div class="field-group">
+      <label class="field-label" for="c-repairs">Repair Attempts</label>
+      <div class="select-wrap">
+        <select id="c-repairs">
+          <option value="">How many times has it been in for repairs?</option>
+          <option value="1">1 attempt</option>
+          <option value="2">2 attempts</option>
+          <option value="3">3 attempts</option>
+          <option value="4">4 or more attempts</option>
+        </select>
+        <span class="select-arrow">▾</span>
+      </div>
+    </div>
+    <div class="field-group">
+      <label class="field-label" for="c-age">Purchase Date</label>
+      <div class="select-wrap">
+        <select id="c-age">
+          <option value="">When did you buy the car?</option>
+          <option value="under1">Less than 1 year ago</option>
+          <option value="1to2">1–2 years ago</option>
+          <option value="2to3">2–3 years ago</option>
+          <option value="over3">More than 3 years ago</option>
+        </select>
+        <span class="select-arrow">▾</span>
+      </div>
+    </div>
+    <div class="field-group">
+      <label class="field-label" for="c-warranty">Warranty Status</label>
+      <div class="select-wrap">
+        <select id="c-warranty">
+          <option value="">Is the vehicle still under warranty?</option>
+          <option value="yes">Yes, still under warranty</option>
+          <option value="expired">Warranty just expired</option>
+          <option value="no">No / not sure</option>
+        </select>
+        <span class="select-arrow">▾</span>
+      </div>
+    </div>
+  </div>
+  <button class="check-btn" onclick="checkCase()">Check My Case</button>
+
+  <!-- Structured result panel -->
+  <div class="check-result" id="check-result">
+    <div class="result-verdict">
+      <div class="verdict-badge" id="r-badge"></div>
+      <div class="verdict-text">
+        <div class="verdict-title" id="r-title"></div>
+        <div class="verdict-body" id="r-body"></div>
+      </div>
+    </div>
+    <div class="result-next-steps" id="r-next-steps">
+      <div class="next-steps-label">Your Next Steps</div>
+      <div class="next-steps-list" id="r-steps-list"></div>
+    </div>
+  </div>
+</div>
+```
+
   </div>
 </section>
 
 <!-- WHAT IS A LEMON -->
+
 <section id="what-is-a-lemon" class="lemon-explainer-section">
   <div class="section-inner">
     <div class="lemon-explainer-box">
@@ -230,340 +236,299 @@
 </section>
 
 <!-- HOW IT WORKS -->
+
 <section id="how-it-works">
   <div class="section-inner">
     <div class="section-tag">The Simple Version</div>
     <h2 class="section-title">How Lemon Law Works — In Plain English</h2>
     <p class="section-sub">Lemon law is designed so regular people can use it. Here's the whole process, no legal degree required.</p>
 
-    <div class="how-steps">
-      <div class="how-step">
-        <div class="how-step-num">1</div>
-        <div class="how-step-body">
-          <div class="how-step-title">Your Car Has a Real Problem</div>
-          <p>The defect must affect the car’s use, safety, or value — not just a minor rattle. Transmission, engine, brakes, and electrical systems all qualify. Cosmetic issues typically don’t.</p>
-        </div>
-      </div>
-      <div class="how-step">
-        <div class="how-step-num">2</div>
-        <div class="how-step-body">
-          <div class="how-step-title">The Dealer Can’t Fix It</div>
-          <p>Most states require 3–4 failed repair attempts for the same problem, or 30 or more total days in the shop. Once the dealer has had a reasonable chance and still can't fix it, the law is on your side.</p>
-        </div>
-      </div>
-      <div class="how-step">
-        <div class="how-step-num">3</div>
-        <div class="how-step-body">
-          <div class="how-step-title">You File a Claim</div>
-          <p>File directly with the manufacturer or through your state’s arbitration program. Most lemon law attorneys work on contingency — no upfront cost to you.</p>
-        </div>
-      </div>
-      <div class="how-step">
-        <div class="how-step-num">4</div>
-        <div class="how-step-body">
-          <div class="how-step-title">You Get Paid Back — or Get a New Car</div>
-          <p>If your claim succeeds, the manufacturer owes you either your money back (everything you paid, minus a small mileage deduction) or a brand-new replacement vehicle. In most states, they also cover your legal fees.</p>
-        </div>
-      </div>
+```
+<div class="how-steps">
+  <div class="how-step">
+    <div class="how-step-num">1</div>
+    <div class="how-step-body">
+      <div class="how-step-title">Your Car Has a Real Problem</div>
+      <p>The defect must affect the car’s use, safety, or value — not just a minor rattle. Transmission, engine, brakes, and electrical systems all qualify. Cosmetic issues typically don’t.</p>
     </div>
+  </div>
+  <div class="how-step">
+    <div class="how-step-num">2</div>
+    <div class="how-step-body">
+      <div class="how-step-title">The Dealer Can’t Fix It</div>
+      <p>Most states require 3–4 failed repair attempts for the same problem, or 30 or more total days in the shop. Once the dealer has had a reasonable chance and still can't fix it, the law is on your side.</p>
+    </div>
+  </div>
+  <div class="how-step">
+    <div class="how-step-num">3</div>
+    <div class="how-step-body">
+      <div class="how-step-title">You File a Claim</div>
+      <p>File directly with the manufacturer or through your state’s arbitration program. Most lemon law attorneys work on contingency — no upfront cost to you.</p>
+    </div>
+  </div>
+  <div class="how-step">
+    <div class="how-step-num">4</div>
+    <div class="how-step-body">
+      <div class="how-step-title">You Get Paid Back — or Get a New Car</div>
+      <p>If your claim succeeds, the manufacturer owes you either your money back (everything you paid, minus a small mileage deduction) or a brand-new replacement vehicle. In most states, they also cover your legal fees.</p>
+    </div>
+  </div>
+</div>
+```
+
   </div>
 </section>
 
 <!-- WHAT YOU CAN CLAIM -->
+
 <section id="what-you-can-claim">
   <div class="section-inner">
     <div class="section-tag">If Your Claim Succeeds</div>
     <h2 class="section-title">What You May Be Entitled To</h2>
     <p class="section-sub">If your claim succeeds, here’s what the manufacturer may owe you — most people are surprised by how much is on the table.</p>
 
-    <div class="entitle-grid">
-      <div class="entitle-card entitle-primary">
-        <div class="entitle-tag">The most common outcome</div>
-        <div class="entitle-title">Full Purchase Refund</div>
-        <p>Everything you paid — purchase price, taxes, registration, and finance charges. A small deduction applies for miles driven before the defect began.</p>
-        <div class="entitle-detail">Includes all fees &amp; charges paid</div>
-      </div>
-      <div class="entitle-card entitle-primary">
-        <div class="entitle-tag">If you'd rather have a new car</div>
-        <div class="entitle-title">Vehicle Replacement</div>
-        <p>A brand-new comparable vehicle — same make, model, and features. You choose this or a refund; you’re not forced into either.</p>
-        <div class="entitle-detail">Same value, new vehicle</div>
-      </div>
-      <div class="entitle-card entitle-primary">
-        <div class="entitle-tag">Sometimes the fastest option</div>
-        <div class="entitle-title">Cash Settlement</div>
-        <p>The manufacturer pays you an agreed amount. You keep the car. This is quicker than a full buyback and is sometimes the outcome of negotiation.</p>
-        <div class="entitle-detail">Negotiated with manufacturer</div>
-      </div>
-      <div class="entitle-card entitle-secondary">
-        <div class="entitle-title">Legal Help at No Cost to You</div>
-        <p>In most states, if you win, the manufacturer pays your attorney's fees — so getting a lawyer costs you nothing. That's why lemon law attorneys take cases for free upfront.</p>
-      </div>
-      <div class="entitle-card entitle-secondary">
-        <div class="entitle-title">Repair Costs</div>
-        <p>Money spent on repair attempts — at the dealer or elsewhere — is typically recoverable. Save every receipt from day one.</p>
-      </div>
-      <div class="entitle-card entitle-secondary">
-        <div class="entitle-title">Rental &amp; Transportation</div>
-        <p>Rental car costs while the vehicle was in the shop are often included. Document every related expense from the start.</p>
-      </div>
-    </div>
-    </div>
+```
+<div class="entitle-grid">
+  <div class="entitle-card entitle-primary">
+    <div class="entitle-tag">The most common outcome</div>
+    <div class="entitle-title">Full Purchase Refund</div>
+    <p>Everything you paid — purchase price, taxes, registration, and finance charges. A small deduction applies for miles driven before the defect began.</p>
+    <div class="entitle-detail">Includes all fees &amp; charges paid</div>
+  </div>
+  <div class="entitle-card entitle-primary">
+    <div class="entitle-tag">If you'd rather have a new car</div>
+    <div class="entitle-title">Vehicle Replacement</div>
+    <p>A brand-new comparable vehicle — same make, model, and features. You choose this or a refund; you’re not forced into either.</p>
+    <div class="entitle-detail">Same value, new vehicle</div>
+  </div>
+  <div class="entitle-card entitle-primary">
+    <div class="entitle-tag">Sometimes the fastest option</div>
+    <div class="entitle-title">Cash Settlement</div>
+    <p>The manufacturer pays you an agreed amount. You keep the car. This is quicker than a full buyback and is sometimes the outcome of negotiation.</p>
+    <div class="entitle-detail">Negotiated with manufacturer</div>
+  </div>
+  <div class="entitle-card entitle-secondary">
+    <div class="entitle-title">Legal Help at No Cost to You</div>
+    <p>In most states, if you win, the manufacturer pays your attorney's fees — so getting a lawyer costs you nothing. That's why lemon law attorneys take cases for free upfront.</p>
+  </div>
+  <div class="entitle-card entitle-secondary">
+    <div class="entitle-title">Repair Costs</div>
+    <p>Money spent on repair attempts — at the dealer or elsewhere — is typically recoverable. Save every receipt from day one.</p>
+  </div>
+  <div class="entitle-card entitle-secondary">
+    <div class="entitle-title">Rental &amp; Transportation</div>
+    <p>Rental car costs while the vehicle was in the shop are often included. Document every related expense from the start.</p>
+  </div>
+</div>
+</div>
+```
+
 </section>
 
 <!-- BY STATE -->
+
 <section id="by-state">
   <div class="section-inner">
     <div class="section-tag">State-by-State Guide</div>
     <h2 class="section-title">Lemon Law Rules by State</h2>
     <p class="section-sub">Click or hover your state. All time limits run from your <strong style="color:rgba(255,255,255,0.8)">original purchase date</strong> — not from when problems started.</p>
 
-    <div id="state-grid"></div>
+```
+<div id="state-grid"></div>
+```
+
   </div>
 </section>
 
-
-
 <!-- FIND A LAWYER -->
+
 <section id="find-a-lawyer">
   <div class="section-inner">
     <div class="section-tag">No Upfront Cost</div>
     <h2 class="section-title">Find Lawyers for Lemon Law Near You</h2>
     <p class="section-sub">Lemon law attorneys work on contingency — meaning they only get paid if you win, and the manufacturer covers their fees. Getting a lawyer costs you nothing out of pocket.</p>
 
-    <div class="lawyer-disclaimer">
-      <strong>We are not affiliated with any of the directories or law firms listed below.</strong> No one has paid us to be featured here. These are established legal directories we recommend based on their reputation and usefulness for finding qualified lemon law attorneys in your state.
-    </div>
+```
+<div class="lawyer-disclaimer">
+  <strong>We are not affiliated with any of the directories or law firms listed below.</strong> No one has paid us to be featured here. These are established legal directories we recommend based on their reputation and usefulness for finding qualified lemon law attorneys in your state.
+</div>
 
-    <!-- State selector -->
-    <div class="lawyer-state-picker">
-      <label class="lsp-label" for="hp-state">Select your state to find attorneys near you</label>
-      <div class="lsp-row">
-        <div class="lsp-select-wrap">
-          <select id="hp-state" onchange="updateLawyerLinks()">
-            <option value="">Choose your state...</option>
-            <option value="Alabama">Alabama</option>
-            <option value="Alaska">Alaska</option>
-            <option value="Arizona">Arizona</option>
-            <option value="Arkansas">Arkansas</option>
-            <option value="California">California</option>
-            <option value="Colorado">Colorado</option>
-            <option value="Connecticut">Connecticut</option>
-            <option value="Delaware">Delaware</option>
-            <option value="Florida">Florida</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Hawaii">Hawaii</option>
-            <option value="Idaho">Idaho</option>
-            <option value="Illinois">Illinois</option>
-            <option value="Indiana">Indiana</option>
-            <option value="Iowa">Iowa</option>
-            <option value="Kansas">Kansas</option>
-            <option value="Kentucky">Kentucky</option>
-            <option value="Louisiana">Louisiana</option>
-            <option value="Maine">Maine</option>
-            <option value="Maryland">Maryland</option>
-            <option value="Massachusetts">Massachusetts</option>
-            <option value="Michigan">Michigan</option>
-            <option value="Minnesota">Minnesota</option>
-            <option value="Mississippi">Mississippi</option>
-            <option value="Missouri">Missouri</option>
-            <option value="Montana">Montana</option>
-            <option value="Nebraska">Nebraska</option>
-            <option value="Nevada">Nevada</option>
-            <option value="New Hampshire">New Hampshire</option>
-            <option value="New Jersey">New Jersey</option>
-            <option value="New Mexico">New Mexico</option>
-            <option value="New York">New York</option>
-            <option value="North Carolina">North Carolina</option>
-            <option value="North Dakota">North Dakota</option>
-            <option value="Ohio">Ohio</option>
-            <option value="Oklahoma">Oklahoma</option>
-            <option value="Oregon">Oregon</option>
-            <option value="Pennsylvania">Pennsylvania</option>
-            <option value="Rhode Island">Rhode Island</option>
-            <option value="South Carolina">South Carolina</option>
-            <option value="South Dakota">South Dakota</option>
-            <option value="Tennessee">Tennessee</option>
-            <option value="Texas">Texas</option>
-            <option value="Utah">Utah</option>
-            <option value="Vermont">Vermont</option>
-            <option value="Virginia">Virginia</option>
-            <option value="Washington">Washington</option>
-            <option value="West Virginia">West Virginia</option>
-            <option value="Wisconsin">Wisconsin</option>
-            <option value="Wyoming">Wyoming</option>
-          </select>
-          <span class="lsp-arrow">▾</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Directory cards — update on state select -->
-    <div class="lawyer-dirs" id="lawyer-dirs">
-      <a id="ldc-justia" href="https://www.justia.com/lawyers/lemon-law" target="_blank" rel="noopener noreferrer" class="lawyer-dir-card">
-        <div class="ldc-name">Justia</div>
-        <div class="ldc-desc">Free legal directory. Verified attorney profiles filtered by state and lemon law specialty.</div>
-        <div class="ldc-link" id="ldc-justia-label">Search Justia →</div>
-      </a>
-      <a id="ldc-avvo" href="https://www.avvo.com/lemon-law-lawyer.html" target="_blank" rel="noopener noreferrer" class="lawyer-dir-card">
-        <div class="ldc-name">Avvo</div>
-        <div class="ldc-desc">Largest US lawyer directory. Peer reviews, client ratings, and case history by practice area.</div>
-        <div class="ldc-link" id="ldc-avvo-label">Search Avvo →</div>
-      </a>
-      <a id="ldc-findlaw" href="https://lawyers.findlaw.com/lawyer/practice/lemon-law" target="_blank" rel="noopener noreferrer" class="lawyer-dir-card">
-        <div class="ldc-name">FindLaw</div>
-        <div class="ldc-desc">Trusted consumer legal resource with detailed firm profiles and lemon law specialty filters.</div>
-        <div class="ldc-link" id="ldc-findlaw-label">Search FindLaw →</div>
-      </a>
-      <a href="https://www.nolo.com/lawyers/lemon-law" target="_blank" rel="noopener noreferrer" class="lawyer-dir-card">
-        <div class="ldc-name">Nolo</div>
-        <div class="ldc-desc">Legal self-help authority since 1971. Consumer-focused attorneys who explain your rights clearly.</div>
-        <div class="ldc-link">Search Nolo →</div>
-      </a>
-      <a href="https://www.lemonlawamerica.com" target="_blank" rel="noopener noreferrer" class="lawyer-dir-card">
-        <div class="ldc-name">Lemon Law America</div>
-        <div class="ldc-desc">Niche directory focused exclusively on lemon law. Every firm listed specializes in vehicle defect cases.</div>
-        <div class="ldc-link">Search Lemon Law America →</div>
-      </a>
-    </div>
-
+<!-- State selector -->
+<div class="lawyer-dirs">
+  <a href="https://www.justia.com/lawyers/lemon-law" target="_blank" rel="noopener noreferrer" class="lawyer-dir-card">
+    <div class="ldc-name">Justia</div>
+    <div class="ldc-desc">Free legal directory. Search lemon law attorneys by state with verified profiles, ratings, and contact info.</div>
+    <div class="ldc-link">Search Justia →</div>
+  </a>
+  <a href="https://www.avvo.com/lemon-law-lawyer.html" target="_blank" rel="noopener noreferrer" class="lawyer-dir-card">
+    <div class="ldc-name">Avvo</div>
+    <div class="ldc-desc">The largest lawyer directory in the US. Filter by lemon law specialty and location. Includes peer reviews and client ratings.</div>
+    <div class="ldc-link">Search Avvo →</div>
+  </a>
+  <a href="https://lawyers.findlaw.com/lawyer/practice/lemon-law" target="_blank" rel="noopener noreferrer" class="lawyer-dir-card">
+    <div class="ldc-name">FindLaw</div>
+    <div class="ldc-desc">Trusted consumer legal resource. Find lemon law attorneys near you with detailed firm profiles and practice area focus.</div>
+    <div class="ldc-link">Search FindLaw →</div>
+  </a>
+  <a href="https://www.nolo.com/lawyers/lemon-law" target="_blank" rel="noopener noreferrer" class="lawyer-dir-card">
+    <div class="ldc-name">Nolo</div>
+    <div class="ldc-desc">Legal self-help authority since 1971. Consumer-focused attorneys who explain your rights clearly.</div>
+    <div class="ldc-link">Search Nolo →</div>
+  </a>
+  <a href="https://www.lemonlawamerica.com" target="_blank" rel="noopener noreferrer" class="lawyer-dir-card">
+    <div class="ldc-name">Lemon Law America</div>
+    <div class="ldc-desc">Niche directory focused exclusively on lemon law. Every firm listed specializes in vehicle defect cases.</div>
+    <div class="ldc-link">Search Lemon Law America →</div>
+  </a>
+</div>
     <p style="text-align:center;margin:0 0 1.5rem"><a href="lawyers-for-lemon-law.html" style="font-weight:700;color:var(--navy);font-size:0.9rem">Read the full guide: How to Find a Lemon Law Lawyer &amp; What It Costs &rarr;</a></p>
-    <div class="lawyer-tip">
-      <strong>What to ask in a free consultation:</strong> How many lemon law cases have you handled in my state? What percentage do you win? How does your fee work if I win — and what happens if I lose? Any reputable lemon law attorney should answer all three without hesitation.
-    </div>
+<div class="lawyer-tip">
+  <strong>What to ask in a free consultation:</strong> How many lemon law cases have you handled in my state? What percentage do you win? How does your fee work if I win — and what happens if I lose? Any reputable lemon law attorney should answer all three without hesitation.
+</div>
+```
+
   </div>
 </section>
 
 <!-- FAQ -->
+
 <section id="faq">
   <div class="section-inner">
     <div class="section-tag">Common Questions</div>
     <h2 class="section-title">Lemon Law FAQ</h2>
     <p class="section-sub">Real questions from people in the same situation you're in — answered honestly, without legal jargon.</p>
 
-    <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          How many repair attempts do I need before I can file a lemon law claim?
-        </button>
-        <div class="faq-a">Most states require 3–4 repair attempts for the same defect, or 30 or more days in the shop total (not necessarily consecutive). California requires 2 attempts for serious safety defects. Some states also allow a single attempt if the defect could cause death or serious injury. Check your specific state's rules in the state guide above — requirements vary significantly.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Does lemon law only cover new cars?
-        </button>
-        <div class="faq-a">It depends on your state. Most state lemon laws cover new vehicles purchased with a manufacturer's warranty. About 20 states also extend protection to used vehicles under certain conditions — usually if the car is still under the original manufacturer's warranty at the time of purchase. Additionally, federal law (the Magnuson-Moss Warranty Act) provides some protection for used vehicle buyers regardless of state lemon law coverage.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          What's the difference between a refund and a replacement?
-        </button>
-        <div class="faq-a">A refund (also called a "buyback") means the manufacturer repurchases your vehicle for what you paid — including taxes, fees, and finance charges, minus a small deduction for miles driven before the problem started. A replacement means they give you a brand-new comparable vehicle at no charge. You typically get to choose which option you want. Most consumers choose a refund because they no longer trust that manufacturer's vehicles. Either way, you walk away financially whole.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Do I need a lawyer to file a lemon law claim?
-        </button>
-        <div class="faq-a">No — you can file a lemon law claim yourself through your state's arbitration program or directly with the manufacturer. However, lemon law attorneys almost always work on contingency, meaning you pay nothing upfront and they only get paid (from the manufacturer) if you win. Because the manufacturer covers attorney fees in most states when you prevail, hiring a lawyer costs you nothing extra and significantly increases your chances of a favorable outcome. Most consumers are better served by using an attorney.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          How long does a lemon law claim take?
-        </button>
-        <div class="faq-a">Through a manufacturer's arbitration program: typically 40–70 days after you file. Through state arbitration programs: similar timeline, often 30–60 days. If the case goes to court: 6 months to 2 years, depending on how contested the case is. Most lemon law cases settle well before trial because manufacturers know the law and would rather settle quickly than fight a clearly documented claim.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          What if the dealer says my problem isn't covered?
-        </button>
-        <div class="faq-a">The dealer's opinion doesn't determine your legal rights — lemon law does. If the defect meets your state's requirements (repeated failed repairs, substantial impairment of use or safety, within the warranty period), you have a case regardless of what the dealer says. Get everything in writing — every repair order, every conversation. A pattern of documented failed repairs is your strongest evidence, even if each service order says "could not duplicate concern."</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Can I still file if the warranty has expired?
-        </button>
-        <div class="faq-a">It depends on when the problems started. If the defect first appeared while the car was still under warranty, many states allow you to file even after the warranty has technically expired — as long as you reported the problem during the warranty period. Federal law (Magnuson-Moss) also provides some post-warranty protections. The key is documentation: repair orders showing you reported the problem while under warranty are critical evidence.</div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
-          Does lemon law cover leased vehicles?
-        </button>
-        <div class="faq-a">Yes — in most states, lemon law protections apply to leased vehicles just as they do to purchased ones. If you lease a lemon, you're entitled to a replacement lease or a refund of your down payment and monthly payments made, minus the usage deduction. The lemon law claim is typically filed against the manufacturer, not the leasing company. Federal law (Magnuson-Moss) also provides coverage for leased vehicles.</div>
-      </div>
-    </div>
+```
+<div class="faq-list">
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      How many repair attempts do I need before I can file a lemon law claim?
+    </button>
+    <div class="faq-a">Most states require 3–4 repair attempts for the same defect, or 30 or more days in the shop total (not necessarily consecutive). California requires 2 attempts for serious safety defects. Some states also allow a single attempt if the defect could cause death or serious injury. Check your specific state's rules in the state guide above — requirements vary significantly.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      Does lemon law only cover new cars?
+    </button>
+    <div class="faq-a">It depends on your state. Most state lemon laws cover new vehicles purchased with a manufacturer's warranty. About 20 states also extend protection to used vehicles under certain conditions — usually if the car is still under the original manufacturer's warranty at the time of purchase. Additionally, federal law (the Magnuson-Moss Warranty Act) provides some protection for used vehicle buyers regardless of state lemon law coverage.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      What's the difference between a refund and a replacement?
+    </button>
+    <div class="faq-a">A refund (also called a "buyback") means the manufacturer repurchases your vehicle for what you paid — including taxes, fees, and finance charges, minus a small deduction for miles driven before the problem started. A replacement means they give you a brand-new comparable vehicle at no charge. You typically get to choose which option you want. Most consumers choose a refund because they no longer trust that manufacturer's vehicles. Either way, you walk away financially whole.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      Do I need a lawyer to file a lemon law claim?
+    </button>
+    <div class="faq-a">No — you can file a lemon law claim yourself through your state's arbitration program or directly with the manufacturer. However, lemon law attorneys almost always work on contingency, meaning you pay nothing upfront and they only get paid (from the manufacturer) if you win. Because the manufacturer covers attorney fees in most states when you prevail, hiring a lawyer costs you nothing extra and significantly increases your chances of a favorable outcome. Most consumers are better served by using an attorney.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      How long does a lemon law claim take?
+    </button>
+    <div class="faq-a">Through a manufacturer's arbitration program: typically 40–70 days after you file. Through state arbitration programs: similar timeline, often 30–60 days. If the case goes to court: 6 months to 2 years, depending on how contested the case is. Most lemon law cases settle well before trial because manufacturers know the law and would rather settle quickly than fight a clearly documented claim.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      What if the dealer says my problem isn't covered?
+    </button>
+    <div class="faq-a">The dealer's opinion doesn't determine your legal rights — lemon law does. If the defect meets your state's requirements (repeated failed repairs, substantial impairment of use or safety, within the warranty period), you have a case regardless of what the dealer says. Get everything in writing — every repair order, every conversation. A pattern of documented failed repairs is your strongest evidence, even if each service order says "could not duplicate concern."</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      Can I still file if the warranty has expired?
+    </button>
+    <div class="faq-a">It depends on when the problems started. If the defect first appeared while the car was still under warranty, many states allow you to file even after the warranty has technically expired — as long as you reported the problem during the warranty period. Federal law (Magnuson-Moss) also provides some post-warranty protections. The key is documentation: repair orders showing you reported the problem while under warranty are critical evidence.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">
+      Does lemon law cover leased vehicles?
+    </button>
+    <div class="faq-a">Yes — in most states, lemon law protections apply to leased vehicles just as they do to purchased ones. If you lease a lemon, you're entitled to a replacement lease or a refund of your down payment and monthly payments made, minus the usage deduction. The lemon law claim is typically filed against the manufacturer, not the leasing company. Federal law (Magnuson-Moss) also provides coverage for leased vehicles.</div>
+  </div>
+</div>
+```
+
   </div>
 </section>
 
 <!-- GUIDES -->
+
 <section id="guides">
   <div class="section-inner">
     <div class="section-tag">Free Guides</div>
     <h2 class="section-title">Know Your Rights — Plain English, No Lawyer Needed</h2>
     <p class="section-sub">Whether it's your car, your job, or your home — the law protects you more than you probably realize. Start with what applies to you.</p>
 
-    <div class="guides-group">
-      <div class="guides-group-label">Lemon Law</div>
-      <div class="blog-grid">
-        <a href="blog/what-is-lemon-law.html" class="blog-card blog-card-featured">
-          <div class="bc-tag">Start Here</div>
-          <h3>What Is Lemon Law? The Complete Beginner's Guide</h3>
-          <p>What qualifies, what you're entitled to, and exactly how the process works — from someone who got a bad car to getting their money back.</p>
-          <div class="bc-meta">10 min read</div>
-        </a>
-        <a href="blog/lemon-law-by-state.html" class="blog-card">
-          <div class="bc-tag">All 50 States</div>
-          <h3>Lemon Law by State: Rules, Deadlines &amp; How to File</h3>
-          <p>Your state's repair attempt threshold, time limit to file, and which vehicles are covered — all in one place.</p>
-          <div class="bc-meta">12 min read</div>
-        </a>
-      </div>
-    </div>
+```
+<div class="guides-group">
+  <div class="guides-group-label">Lemon Law</div>
+  <div class="blog-grid">
+    <a href="blog/what-is-lemon-law.html" class="blog-card blog-card-featured">
+      <div class="bc-tag">Start Here</div>
+      <h3>What Is Lemon Law? The Complete Beginner's Guide</h3>
+      <p>What qualifies, what you're entitled to, and exactly how the process works — from someone who got a bad car to getting their money back.</p>
+      <div class="bc-meta">10 min read</div>
+    </a>
+    <a href="blog/lemon-law-by-state.html" class="blog-card">
+      <div class="bc-tag">All 50 States</div>
+      <h3>Lemon Law by State: Rules, Deadlines &amp; How to File</h3>
+      <p>Your state's repair attempt threshold, time limit to file, and which vehicles are covered — all in one place.</p>
+      <div class="bc-meta">12 min read</div>
+    </a>
+  </div>
+</div>
 
-    <div class="guides-group">
-      <div class="guides-group-label">Other Rights You May Not Know You Have</div>
-      <div class="blog-grid">
-        <a href="blog/unlawful-termination.html" class="blog-card">
-          <div class="bc-tag">Employment</div>
-          <h3>Were You Illegally Fired?</h3>
-          <p>Most firings are legal — but not all. Discrimination, retaliation, and contract violations can all be grounds for a wrongful termination claim.</p>
-          <div class="bc-meta">9 min read</div>
-        </a>
-        <a href="blog/tenant-rights.html" class="blog-card">
-          <div class="bc-tag">Housing</div>
-          <h3>What Your Landlord Can and Can't Do</h3>
-          <p>Security deposits, repairs, illegal entry, evictions — what landlords are legally required to do and what they're not allowed to get away with.</p>
-          <div class="bc-meta">11 min read</div>
-        </a>
-        <a href="blog/debt-collector-rights.html" class="blog-card">
-          <div class="bc-tag">Debt</div>
-          <h3>Debt Collectors Are Breaking the Law — Here's How to Stop Them</h3>
-          <p>Harassment, false threats, calling at odd hours — all illegal. The FDCPA gives you the right to sue, and you don't need a lawyer to start.</p>
-          <div class="bc-meta">8 min read</div>
-        </a>
-        <a href="blog/will-estate-basics.html" class="blog-card">
-          <div class="bc-tag">Estate Planning</div>
-          <h3>Wills &amp; Estates: What Happens If You Don't Have One</h3>
-          <p>Without a will, the state decides who gets your assets. Here's what you need, what it costs, and how to get it done affordably.</p>
-          <div class="bc-meta">8 min read</div>
-        </a>
-        <a href="blog/power-of-attorney.html" class="blog-card">
-          <div class="bc-tag">Legal Documents</div>
-          <h3>Power of Attorney: Types, Cost, and When You Actually Need One</h3>
-          <p>Medical vs. financial POA, what each one does, and why you may need one sooner than you think — especially for aging parents.</p>
-          <div class="bc-meta">7 min read</div>
-        </a>
-        <a href="blog/civil-case-guide.html" class="blog-card">
-          <div class="bc-tag">Civil Law</div>
-          <h3>How to File a Civil Case Without a Lawyer</h3>
-          <p>You don't need the police or a crime to take legal action. Civil court lets you sue for money damages when someone wrongs you.</p>
-          <div class="bc-meta">9 min read</div>
-        </a>
-      </div>
-    </div>
+<div class="guides-group">
+  <div class="guides-group-label">Other Rights You May Not Know You Have</div>
+  <div class="blog-grid">
+    <a href="blog/unlawful-termination.html" class="blog-card">
+      <div class="bc-tag">Employment</div>
+      <h3>Were You Illegally Fired?</h3>
+      <p>Most firings are legal — but not all. Discrimination, retaliation, and contract violations can all be grounds for a wrongful termination claim.</p>
+      <div class="bc-meta">9 min read</div>
+    </a>
+    <a href="blog/tenant-rights.html" class="blog-card">
+      <div class="bc-tag">Housing</div>
+      <h3>What Your Landlord Can and Can't Do</h3>
+      <p>Security deposits, repairs, illegal entry, evictions — what landlords are legally required to do and what they're not allowed to get away with.</p>
+      <div class="bc-meta">11 min read</div>
+    </a>
+    <a href="blog/debt-collector-rights.html" class="blog-card">
+      <div class="bc-tag">Debt</div>
+      <h3>Debt Collectors Are Breaking the Law — Here's How to Stop Them</h3>
+      <p>Harassment, false threats, calling at odd hours — all illegal. The FDCPA gives you the right to sue, and you don't need a lawyer to start.</p>
+      <div class="bc-meta">8 min read</div>
+    </a>
+    <a href="blog/will-estate-basics.html" class="blog-card">
+      <div class="bc-tag">Estate Planning</div>
+      <h3>Wills &amp; Estates: What Happens If You Don't Have One</h3>
+      <p>Without a will, the state decides who gets your assets. Here's what you need, what it costs, and how to get it done affordably.</p>
+      <div class="bc-meta">8 min read</div>
+    </a>
+    <a href="blog/power-of-attorney.html" class="blog-card">
+      <div class="bc-tag">Legal Documents</div>
+      <h3>Power of Attorney: Types, Cost, and When You Actually Need One</h3>
+      <p>Medical vs. financial POA, what each one does, and why you may need one sooner than you think — especially for aging parents.</p>
+      <div class="bc-meta">7 min read</div>
+    </a>
+    <a href="blog/civil-case-guide.html" class="blog-card">
+      <div class="bc-tag">Civil Law</div>
+      <h3>How to File a Civil Case Without a Lawyer</h3>
+      <p>You don't need the police or a crime to take legal action. Civil court lets you sue for money damages when someone wrongs you.</p>
+      <div class="bc-meta">9 min read</div>
+    </a>
+  </div>
+</div>
+```
+
   </div>
 </section>
 
 <!-- STICKY BOTTOM CTA STRIP -->
+
 <div class="cta-strip">
   <div class="cta-strip-inner">
     <div>
@@ -894,31 +859,6 @@ function filterStates() {
 }
 
 
-// ── LAWYER DIRECTORY STATE FILTER ──────────────────────────
-function updateLawyerLinks() {
-  const state = document.getElementById('hp-state').value;
-  if (!state) return;
-
-  const slug = state.toLowerCase().replace(/ /g, '-');
-
-  const justia  = document.getElementById('ldc-justia');
-  const avvo    = document.getElementById('ldc-avvo');
-  const findlaw = document.getElementById('ldc-findlaw');
-
-  justia.href  = 'https://www.justia.com/lawyers/' + slug + '/lemon-law';
-  avvo.href    = 'https://www.avvo.com/lemon-law-lawyer/' + slug + '.html';
-  findlaw.href = 'https://lawyers.findlaw.com/lawyer/state/' + slug + '/lemon-law';
-
-  document.getElementById('ldc-justia-label').textContent  = 'Search Justia in ' + state + ' →';
-  document.getElementById('ldc-avvo-label').textContent    = 'Search Avvo in ' + state + ' →';
-  document.getElementById('ldc-findlaw-label').textContent = 'Search FindLaw in ' + state + ' →';
-
-  // Highlight the three updated cards
-  [justia, avvo, findlaw].forEach(el => {
-    el.style.borderColor = 'var(--gold)';
-    el.style.background  = 'var(--gold-pale)';
-  });
-}
 
 // ── FAQ ─────────────────────────────────────────────────────
 function toggleFaq(btn) {
@@ -928,5 +868,6 @@ function toggleFaq(btn) {
   if (!wasOpen) item.classList.add('open');
 }
 </script>
+
 </body>
 </html>
