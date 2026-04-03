@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://lemonlawhandbook.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://lemonlawhandbook.com/blog.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lemonlawhandbook.com/blog/what-is-lemon-law.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lemonlawhandbook.com/blog/lemon-law-by-state.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://lemonlawhandbook.com/blog/unlawful-termination.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lemonlawhandbook.com/blog/tenant-rights.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lemonlawhandbook.com/blog/will-estate-basics.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lemonlawhandbook.com/blog/power-of-attorney.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lemonlawhandbook.com/blog/debt-collector-rights.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lemonlawhandbook.com/blog/civil-case-guide.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://lemonlawhandbook.com/privacy.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url>
+    <loc>https://lemonlawhandbook.com/lawyers-for-lemon-law.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+</urlset>

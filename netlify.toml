@@ -1,0 +1,29 @@
+[[headers]]
+  for = "/ads.txt"
+  [headers.values]
+    Content-Type = "text/plain"
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+
+[[redirects]]
+  from = "http://lemonlawhandbook.com/*"
+  to = "https://lemonlawhandbook.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.lemonlawhandbook.com/*"
+  to = "https://lemonlawhandbook.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.lemonlawhandbook.com/*"
+  to = "https://lemonlawhandbook.com/:splat"
+  status = 301
+  force = true
