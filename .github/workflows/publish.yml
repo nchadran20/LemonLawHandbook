@@ -2,7 +2,7 @@ name: Publish Scheduled Articles
 
 on:
   schedule:
-    - cron: '0 14 * * *'
+    - cron: '17 14 * * *'  # 9:17am Central Time daily
   workflow_dispatch:
 
 jobs:
