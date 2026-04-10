@@ -344,15 +344,7 @@ section{padding:4rem 1.5rem}
 .data-table tr:hover td{background:#FAFAF5}
 .footer-stripe{height:4px;background:linear-gradient(90deg,var(--gold),#fff5d6,var(--gold))}
 footer{background:var(--navy);color:rgba(255,255,255,0.5);padding:3rem 1.5rem;font-size:0.83rem}
-
-.footer-logo{font-size:1.1rem;font-weight:900;color:#fff;margin-bottom:0.6rem}
-.footer-tagline{font-size:0.82rem;color:rgba(255,255,255,0.42);line-height:1.6}
-.footer-inner h4{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:0.8rem}
-.footer-inner ul{list-style:none}
-.footer-inner ul li{margin-bottom:0.4rem}
-.footer-inner ul a{font-size:0.85rem;color:rgba(255,255,255,0.55)}
-.footer-inner ul a:hover{color:var(--gold)}
-.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem}
 footer h4{color:#fff;font-weight:800;font-size:0.9rem;letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1rem}
 footer p{line-height:1.7;margin-bottom:0.8rem}
 footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
@@ -397,7 +389,13 @@ footer a:hover{color:var(--gold)}
 .lemon-yes::before{background:#4ade80}
 .lemon-no{color:rgba(255,255,255,0.4);background:rgba(255,255,255,0.04)}
 .lemon-no::before{background:rgba(255,255,255,0.2)}
-@media(max-width:768px){.lemon-explainer-box{grid-template-columns:1fr;gap:1.5rem}}
+@media(max-width:768px){
+  .hero-inner{text-align:center}
+  .hero h1{text-align:center}
+  .hero p{text-align:center}
+  .hero-badge{text-align:center}
+  .hero-ctas,.hero-cta-row{justify-content:center}
+.lemon-explainer-box{grid-template-columns:1fr;gap:1.5rem}}
 
 
 /* ── MOBILE TOOLTIP: fixed to viewport ─────────────────── */
@@ -471,6 +469,12 @@ nav.nav-open .nav-toggle span:nth-child(3){transform:translateY(-7px) rotate(-45
 
 /* ── MOBILE ─────────────────────────────────────────── */
 @media(max-width:768px){
+  .hero-inner{text-align:center}
+  .hero h1{text-align:center}
+  .hero p{text-align:center}
+  .hero-badge{text-align:center}
+  .hero-ctas,.hero-cta-row{justify-content:center}
+
   /* Nav */
   .nav-toggle{display:flex}
   .nav-links{display:none;position:absolute;top:62px;left:0;right:0;background:var(--navy);flex-direction:column;gap:0;padding:0.5rem 0;box-shadow:0 8px 24px rgba(0,0,0,0.3);z-index:200}
