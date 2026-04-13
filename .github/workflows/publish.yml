@@ -48,12 +48,226 @@ jobs:
 
           echo "Total published: $PUBLISHED"
 
-          if [ "$PUBLISHED" -gt 0 ]; then
-            git config user.name "Lemon Law Handbook Bot"
-            git config user.email "action@github.com"
-            git add -A
-            git commit -m "Auto-published $PUBLISHED article(s) for $TODAY"
-            git push
+      - name: Regenerate blog.html
+        run: |
+          python3 - <<'PYEOF'
+          import os, re
+
+          BLOG_DIR = "blog"
+          SCHED_DIR = "scheduled"
+
+          META = {
+              "what-is-lemon-law.html": ("Start Here", "What Is Lemon Law?", "The complete plain-English guide — what qualifies, what you're entitled to, and exactly how the process works."),
+              "lemon-law-by-state.html": ("All 50 States", "Lemon Law by State: All 50 States", "Your state's repair attempt threshold, filing deadline, and which vehicles are covered — all in one place."),
+              "lemon-law-texas.html": ("Texas", "Texas Lemon Law Guide", "Texas-specific rules, repair attempt thresholds, how to file, and what compensation you can receive."),
+              "lemon-law-california.html": ("California", "California Lemon Law Guide", "California has one of the strongest lemon laws in the US. Here's exactly how it works."),
+              "lemon-law-florida.html": ("Florida", "Florida Lemon Law Guide", "Florida's lemon law covers new vehicles under warranty. Full breakdown of your rights."),
+              "lemon-law-new-york.html": ("New York", "New York Lemon Law Guide", "New York has strong protections for both new and used vehicles. Here's how to use them."),
+              "lemon-law-ohio.html": ("Ohio", "Ohio Lemon Law Guide", "Ohio lemon law rules, qualification requirements, and step-by-step filing instructions."),
+              "lemon-law-pennsylvania.html": ("Pennsylvania", "Pennsylvania Lemon Law Guide", "Pennsylvania lemon law explained — what qualifies, repair attempt rules, and how to get your refund."),
+              "lemon-law-tennessee.html": ("Tennessee", "Tennessee Lemon Law Guide", "Tennessee lemon law coverage, qualification criteria, and how to file a claim."),
+              "lemon-law-georgia.html": ("Georgia", "Georgia Lemon Law Guide", "Georgia lemon law rules, qualification requirements, and how to file a claim in Georgia."),
+              "lemon-law-michigan.html": ("Michigan", "Michigan Lemon Law Guide", "Michigan lemon law rules, qualification requirements, and how to file a claim in Michigan."),
+              "lemon-law-north-carolina.html": ("North Carolina", "North Carolina Lemon Law Guide", "North Carolina lemon law rules, qualification criteria, and how to file a claim in NC."),
+              "lemon-law-new-jersey.html": ("New Jersey", "New Jersey Lemon Law Guide", "New Jersey lemon law rules, qualification criteria, and how to file a claim in NJ."),
+              "lemon-law-virginia.html": ("Virginia", "Virginia Lemon Law Guide", "Virginia lemon law rules, qualification criteria, and how to file a claim in Virginia."),
+              "lemon-law-washington.html": ("Washington", "Washington Lemon Law Guide", "Washington lemon law rules, qualification criteria, and how to file a claim in Washington."),
+              "lemon-law-arizona.html": ("Arizona", "Arizona Lemon Law Guide", "Arizona lemon law rules, qualification criteria, and how to file a claim in Arizona."),
+              "lemon-law-massachusetts.html": ("Massachusetts", "Massachusetts Lemon Law Guide", "Massachusetts lemon law rules, qualification criteria, and how to file a claim in MA."),
+              "lemon-law-indiana.html": ("Indiana", "Indiana Lemon Law Guide", "Indiana lemon law rules, qualification criteria, and how to file a claim in Indiana."),
+              "lemon-law-colorado.html": ("Colorado", "Colorado Lemon Law Guide", "Colorado lemon law rules, qualification criteria, and how to file a claim in Colorado."),
+              "lemon-law-maryland.html": ("Maryland", "Maryland Lemon Law Guide", "Maryland lemon law rules, qualification criteria, and how to file a claim in Maryland."),
+              "lemon-law-missouri.html": ("Missouri", "Missouri Lemon Law Guide", "Missouri lemon law rules, qualification criteria, and how to file a claim in Missouri."),
+              "lemon-law-wisconsin.html": ("Wisconsin", "Wisconsin Lemon Law Guide", "Wisconsin lemon law rules, qualification criteria, and how to file a claim in Wisconsin."),
+              "lemon-law-minnesota.html": ("Minnesota", "Minnesota Lemon Law Guide", "Minnesota lemon law rules, qualification criteria, and how to file a claim in Minnesota."),
+              "lemon-law-connecticut.html": ("Connecticut", "Connecticut Lemon Law Guide", "Connecticut lemon law rules, qualification criteria, and how to file a claim in CT."),
+              "lemon-law-south-carolina.html": ("South Carolina", "South Carolina Lemon Law Guide", "South Carolina lemon law rules, qualification criteria, and how to file a claim in SC."),
+              "lemon-law-louisiana.html": ("Louisiana", "Louisiana Lemon Law Guide", "Louisiana lemon law rules, qualification criteria, and how to file a claim in Louisiana."),
+              "lemon-law-kentucky.html": ("Kentucky", "Kentucky Lemon Law Guide", "Kentucky lemon law rules, qualification criteria, and how to file a claim in Kentucky."),
+              "lemon-law-oregon.html": ("Oregon", "Oregon Lemon Law Guide", "Oregon lemon law rules, qualification criteria, and how to file a claim in Oregon."),
+              "lemon-law-oklahoma.html": ("Oklahoma", "Oklahoma Lemon Law Guide", "Oklahoma lemon law rules, qualification criteria, and how to file a claim in Oklahoma."),
+              "lemon-law-nevada.html": ("Nevada", "Nevada Lemon Law Guide", "Nevada lemon law rules, qualification criteria, and how to file a claim in Nevada."),
+              "lemon-law-new-hampshire.html": ("New Hampshire", "New Hampshire Lemon Law Guide", "New Hampshire lemon law rules, qualification criteria, and how to file a claim in NH."),
+              "lemon-law-alabama.html": ("Alabama", "Alabama Lemon Law Guide", "Alabama lemon law rules, qualification criteria, and how to file a claim in Alabama."),
+              "lemon-law-mississippi.html": ("Mississippi", "Mississippi Lemon Law Guide", "Mississippi lemon law rules, qualification criteria, and how to file a claim in MS."),
+              "lemon-law-kansas.html": ("Kansas", "Kansas Lemon Law Guide", "Kansas lemon law rules, qualification criteria, and how to file a claim in Kansas."),
+              "lemon-law-arkansas.html": ("Arkansas", "Arkansas Lemon Law Guide", "Arkansas lemon law rules, qualification criteria, and how to file a claim in Arkansas."),
+              "lemon-law-iowa.html": ("Iowa", "Iowa Lemon Law Guide", "Iowa lemon law rules, qualification criteria, and how to file a claim in Iowa."),
+              "lemon-law-utah.html": ("Utah", "Utah Lemon Law Guide", "Utah lemon law rules, qualification criteria, and how to file a claim in Utah."),
+              "lemon-law-new-mexico.html": ("New Mexico", "New Mexico Lemon Law Guide", "New Mexico lemon law rules, qualification criteria, and how to file a claim in NM."),
+              "lemon-law-idaho.html": ("Idaho", "Idaho Lemon Law Guide", "Idaho lemon law rules, qualification criteria, and how to file a claim in Idaho."),
+              "lemon-law-nebraska.html": ("Nebraska", "Nebraska Lemon Law Guide", "Nebraska lemon law rules, qualification criteria, and how to file a claim in Nebraska."),
+              "lemon-law-west-virginia.html": ("West Virginia", "West Virginia Lemon Law Guide", "West Virginia lemon law rules, qualification criteria, and how to file a claim in WV."),
+              "lemon-law-hawaii.html": ("Hawaii", "Hawaii Lemon Law Guide", "Hawaii lemon law rules, qualification criteria, and how to file a claim in Hawaii."),
+              "lemon-law-maine.html": ("Maine", "Maine Lemon Law Guide", "Maine lemon law rules, qualification criteria, and how to file a claim in Maine."),
+              "lemon-law-rhode-island.html": ("Rhode Island", "Rhode Island Lemon Law Guide", "Rhode Island lemon law rules, qualification criteria, and how to file a claim in RI."),
+              "lemon-law-montana.html": ("Montana", "Montana Lemon Law Guide", "Montana lemon law rules, qualification criteria, and how to file a claim in Montana."),
+              "lemon-law-delaware.html": ("Delaware", "Delaware Lemon Law Guide", "Delaware lemon law rules, qualification criteria, and how to file a claim in Delaware."),
+              "lemon-law-south-dakota.html": ("South Dakota", "South Dakota Lemon Law Guide", "South Dakota lemon law rules, qualification criteria, and how to file a claim in SD."),
+              "lemon-law-north-dakota.html": ("North Dakota", "North Dakota Lemon Law Guide", "North Dakota lemon law rules, qualification criteria, and how to file a claim in ND."),
+              "lemon-law-alaska.html": ("Alaska", "Alaska Lemon Law Guide", "Alaska lemon law rules, qualification criteria, and how to file a claim in Alaska."),
+              "lemon-law-vermont.html": ("Vermont", "Vermont Lemon Law Guide", "Vermont lemon law rules, qualification criteria, and how to file a claim in Vermont."),
+              "lemon-law-wyoming.html": ("Wyoming", "Wyoming Lemon Law Guide", "Wyoming lemon law rules, qualification criteria, and how to file a claim in Wyoming."),
+              "lemon-law-illinois.html": ("Illinois", "Illinois Lemon Law Guide", "Illinois lemon law rules, qualification criteria, and how to file a claim in Illinois."),
+          }
+
+          def get_meta(slug):
+              if slug in META:
+                  return META[slug]
+              name = slug.replace("lemon-law-","").replace(".html","").replace("-"," ").title()
+              return (name, f"{name} Lemon Law Guide", f"{name} lemon law rules, qualification criteria, and how to file a claim.")
+
+          ORDER = [
+              "what-is-lemon-law.html","lemon-law-by-state.html","lemon-law-california.html",
+              "lemon-law-texas.html","lemon-law-florida.html","lemon-law-new-york.html",
+              "lemon-law-ohio.html","lemon-law-pennsylvania.html","lemon-law-tennessee.html",
+              "lemon-law-georgia.html","lemon-law-michigan.html","lemon-law-north-carolina.html",
+          ]
+
+          published_all = sorted(os.listdir(BLOG_DIR))
+          def sort_key(s):
+              return (ORDER.index(s) if s in ORDER else len(ORDER), s)
+          published_sorted = sorted(published_all, key=sort_key)
+
+          scheduled_raw = sorted([f for f in os.listdir(SCHED_DIR) if f.endswith(".html")])
+          scheduled_pairs = [(re.sub(r'^\d{4}-\d{2}-\d{2}-', '', f), f[:10]) for f in scheduled_raw]
+
+          pub_cards = ""
+          for slug in published_sorted:
+              tag, title, desc = get_meta(slug)
+              pub_cards += f'    <a href="blog/{slug}" class="blog-card">\n      <div class="bc-tag">{tag}</div>\n      <h3>{title}</h3>\n      <p>{desc}</p>\n      <span class="bc-arrow">Read guide \u2192</span>\n    </a>\n'
+
+          soon_cards = ""
+          for slug, date in scheduled_pairs:
+              tag, title, desc = get_meta(slug)
+              desc2 = desc.replace("how to file a claim", "how to file \u2014 publishing soon")
+              soon_cards += f'    <div class="blog-card blog-card-soon">\n      <div class="bc-tag">{tag}</div>\n      <h3>{title}</h3>\n      <p>{desc2}</p>\n      <span class="bc-soon-label">Coming {date}</span>\n    </div>\n'
+
+          pub_count = len(published_sorted)
+          soon_count = len(scheduled_pairs)
+
+          html = f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6550783064044463" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="ca-pub-6550783064044463">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Lemon Law Guides \u2014 Every State | Lemon Law Handbook</title>
+<meta name="description" content="State-by-state lemon law guides for all 50 states. Plain-English explanations of lemon law rules, how to qualify, and how to file \u2014 free, no lawyer required to start.">
+<link rel="canonical" href="https://lemonlawhandbook.com/blog.html">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  .blog-page-hero{{background:var(--navy);padding:4rem 1.5rem 3.5rem;text-align:center;position:relative}}
+  .blog-page-hero::after{{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),#fff5d6,var(--gold))}}
+  .blog-page-hero h1{{font-family:inherit;font-weight:900;font-size:clamp(1.8rem,4vw,2.8rem);color:#fff;margin-bottom:0.8rem;letter-spacing:-0.01em}}
+  .blog-page-hero h1 em{{font-style:normal;color:var(--gold)}}
+  .blog-page-hero p{{color:rgba(255,255,255,0.6);font-size:1rem;max-width:520px;margin:0 auto}}
+  .blog-container{{max-width:1100px;margin:0 auto;padding:3rem 1.5rem 5rem}}
+  .blog-section-label{{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid rgba(201,168,76,0.2);padding-bottom:0.6rem;margin:2.5rem 0 1.2rem}}
+  .blog-grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin-bottom:1.5rem}}
+  .blog-card{{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:22px;display:flex;flex-direction:column;text-decoration:none;color:var(--text);transition:border-color 0.2s,transform 0.18s}}
+  .blog-card:hover{{border-color:var(--gold);transform:translateY(-3px)}}
+  .blog-card-soon{{opacity:0.5;cursor:default}}
+  .blog-card-soon:hover{{transform:none;border-color:var(--border)}}
+  .bc-tag{{font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);background:var(--smoke);padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:10px}}
+  .blog-card h3{{font-size:1rem;font-weight:700;line-height:1.35;margin-bottom:8px;color:var(--navy)}}
+  .blog-card p{{font-size:0.875rem;color:var(--steel);flex:1;margin-bottom:14px;line-height:1.6}}
+  .bc-arrow{{font-size:0.8rem;font-weight:700;color:var(--gold)}}
+  .bc-soon-label{{font-size:0.75rem;color:var(--muted)}}
+  @media(max-width:640px){{.blog-grid{{grid-template-columns:1fr}}}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Lemon Law <span>Handbook</span></a>
+  <button class="nav-toggle" onclick="document.querySelector('nav').classList.toggle('nav-open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="index.html#how-it-works">How It Works</a></li>
+    <li><a href="index.html#what-you-can-claim">What You Can Claim</a></li>
+    <li><a href="index.html#by-state">By State</a></li>
+    <li><a href="blog.html">Articles</a></li>
+    <li><a href="lawyers-for-lemon-law.html">Find a Lawyer</a></li>
+    <li><a href="index.html#faq">FAQ</a></li>
+  </ul>
+</nav>
+
+<div class="blog-page-hero">
+  <h1>Lemon Law Guides \u2014 <em>All 50 States</em></h1>
+  <p>Plain-English lemon law guides for every state. Find out if you have a case \u2014 free, no lawyer required to start.</p>
+</div>
+
+<div class="blog-container">
+  <div class="blog-section-label">Published Guides ({pub_count})</div>
+  <div class="blog-grid">
+{pub_cards}  </div>
+
+  <div class="blog-section-label">Coming Soon \u2014 Publishing Daily Through May 2026 ({soon_count} remaining)</div>
+  <div class="blog-grid">
+{soon_cards}  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <h4>Lemon Law Handbook</h4>
+      <p>The plain-English guide to lemon law. Know your rights before you need a lawyer.</p>
+    </div>
+    <div>
+      <h4>Lemon Law</h4>
+      <ul>
+        <li><a href="blog/what-is-lemon-law.html">What Is Lemon Law?</a></li>
+        <li><a href="blog/lemon-law-by-state.html">By State Guide</a></li>
+        <li><a href="lawyers-for-lemon-law.html">Find a Lawyer</a></li>
+        <li><a href="blog.html">All Articles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>State Guides</h4>
+      <ul>
+        <li><a href="blog/lemon-law-texas.html">Texas</a></li>
+        <li><a href="blog/lemon-law-california.html">California</a></li>
+        <li><a href="blog/lemon-law-florida.html">Florida</a></li>
+        <li><a href="blog/lemon-law-new-york.html">New York</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Site</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="mailto:info@nunovalabs.com">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>\u00a9 2026 Lemon Law Handbook. For informational purposes only \u2014 not legal advice.</span>
+  </div>
+  <div class="disclaimer">The information on this website is for general educational purposes only and does not constitute legal advice. Always consult a licensed attorney for your specific situation.</div>
+</footer>
+
+</body>
+</html>"""
+
+          with open("blog.html", "w") as f:
+              f.write(html)
+
+          print(f"blog.html regenerated: {pub_count} published, {soon_count} coming soon")
+          PYEOF
+
+      - name: Commit changes
+        run: |
+          git config user.name "Lemon Law Handbook Bot"
+          git config user.email "action@github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed"
           else
-            echo "Nothing to publish today"
+            git commit -m "Auto-published articles + regenerated blog.html for $(date -u '+%Y-%m-%d')"
+            git push
+            echo "Pushed — Netlify will redeploy automatically"
           fi
